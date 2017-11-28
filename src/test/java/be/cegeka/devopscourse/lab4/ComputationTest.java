@@ -8,7 +8,7 @@ public class ComputationTest {
 
     @Test
     public void plusInputOneAndTwoReturnsThree() throws Exception {
-        assertThat(new Computation().plus(1, 2)).isEqualTo(3);
+        assertThat(new Computation().plus(2, 2)).isEqualTo(4);
     }
 
 }
