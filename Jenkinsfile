@@ -8,11 +8,7 @@ stage('Compile') {
 }
 
 stage('Test') {
- steps {
-                sh './gradlew test'
-        }
-junit 'reports/tests/test'
-
+          sh './gradlew test'
 }
 
 post {
