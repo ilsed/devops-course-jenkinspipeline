@@ -8,3 +8,18 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile  'org.assertj:assertj-core:3.8.0'
 }
+
+sourceSets {
+    integrationTest {
+        main {
+            java {
+                include '*IntegrationTest'
+            }
+        }
+    }
+}
+
+task integrationTest(type: Test) {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}

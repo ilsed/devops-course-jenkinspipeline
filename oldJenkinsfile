@@ -12,11 +12,4 @@ stage('Test') {
     }
 }
 
-stage('Integration Test') {
-    node {
-          sh './gradlew clean test'
-          junit 'build/test-results/**/*.xml'
-
-    }
-}
 
