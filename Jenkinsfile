@@ -8,7 +8,9 @@ stage('Compile') {
 }
 
 stage('Test') {
+    node {
           sh './gradlew test'
+    }
 }
 
 post {
