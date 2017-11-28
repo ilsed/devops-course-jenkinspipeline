@@ -1,4 +1,3 @@
-stages{
 
 stage('Compile') {
     node {
@@ -14,7 +13,6 @@ stage('Test') {
         }
 junit 'reports/tests/test'
 
-}
 }
 
 post {
