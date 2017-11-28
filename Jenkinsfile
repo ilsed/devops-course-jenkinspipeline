@@ -6,7 +6,7 @@ stage('Compile') {
 
 stage('Test') {
     node {
-          sh './gradlew test'
+          sh './gradlew clean test'
           junit 'build/test-results/**/*.xml'
 
     }
