@@ -1,22 +1,13 @@
-stage('This is a stage') {
+stage('Compile') {
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '303bf04f-4bc2-4057-9662-a8c05f311735', url: 'https://github.com/ilsed/devops-course-jenkinspipeline.git']]])
+
     node {
-    echo "This is a stage"
+    echo "Compile"
   }
 }
 
-stage('Another stage') {
-}
-
-stage('Proceed?') {
-  input "Are you sure you want to proceed?"
-  milestone()
-  node {
-    echo "Proceed?"
-  }
- milestone()
+stage('Test') {
+junit allowEmptyResults: true, testResults: ''
 
 }
 
-stage('Finished'){
-    echo "finished"
-}
